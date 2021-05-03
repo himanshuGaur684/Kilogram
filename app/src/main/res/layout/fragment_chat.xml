@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="toolbar_title"
+
+            type="String" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".local.ui.mainapp.chat.ChatFragment">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_700"
+            app:navigationIcon="@drawable/ic_back"
+          android:id="@+id/chat_fragment_toolbar"
+            app:titleTextColor="@color/white"
+            tools:title="Himanshu"
+            app:title="@{toolbar_title}"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_below="@+id/chat_fragment_toolbar"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/ll2"
+            android:id="@+id/chat_recycler"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <LinearLayout
+            android:id="@+id/ll2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal"
+            app:layout_dodgeInsetEdges="bottom">
+
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="2"
+                app:cardBackgroundColor="@color/purple_700"
+                app:cardCornerRadius="10dp"
+
+                >
+
+                <EditText
+                    android:id="@+id/send_message_text_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="Type Something.."
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="16sp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <ImageView
+                android:id="@+id/send_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:src="@drawable/ic_send" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="gaur.himanshu.august.kilogram.remote.response.chat.Chat" />
+
+        <variable
+            name="message"
+            type="Chat" />
+
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/nameTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="@{message.sending_username}"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameTxt"
+            android:layout_margin="8dp"
+            android:padding="8dp"
+            app:cardBackgroundColor="@color/black"
+            app:cardCornerRadius="8dp">
+
+
+            <TextView
+                android:id="@+id/receivedTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@{message.message}"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                tools:text="Hello this is a sample text" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+</layout>

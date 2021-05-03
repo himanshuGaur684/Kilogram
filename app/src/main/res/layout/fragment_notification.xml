@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".local.ui.mainapp.notification.NotificationFragment">
+
+     <androidx.appcompat.widget.Toolbar
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="@color/purple_700"
+         app:navigationIcon="@drawable/ic_back"
+         app:titleTextColor="@color/white"
+         app:title="Notifications"
+        android:id="@+id/notification_toolbar"
+         />
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:id="@+id/notification_swipe_refresh"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/notification_toolbar"
+            >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:id="@+id/notification_recycler"
+            />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </RelativeLayout>
+</layout>

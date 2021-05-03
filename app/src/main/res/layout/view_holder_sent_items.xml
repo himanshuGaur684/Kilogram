@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="gaur.himanshu.august.kilogram.remote.response.chat.Chat" />
+
+        <variable
+            name="message"
+            type="Chat" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:id="@+id/sentTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#cccccc"
+                android:padding="8dp"
+                android:text="@{message.message}"
+                android:textSize="16sp"
+                tools:text="Hello this is a sample message" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </RelativeLayout>
+</layout>

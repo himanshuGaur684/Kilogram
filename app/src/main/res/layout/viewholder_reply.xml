@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+<import type="gaur.himanshu.august.kilogram.remote.response.reply.Data"/>
+        <variable
+            name="reply"
+            type="Data" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       >
+
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/comment_viewholder_image_view"
+            glide="@{reply.profileimage}"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+           android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@color/black"
+            app:riv_corner_radius="30dp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/comment_viewholder_title_text_view"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/comment_viewholder_image_view"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{reply.username}"
+            android:textColor="@color/black"
+            tools:text="Himanshu" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextAppearance.AppCompat.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/comment_viewholder_title_text_view"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@+id/comment_viewholder_image_view"
+            android:text="@{reply.reply}"
+            tools:text="Himanshu" />
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="0.4dp"
+            android:layout_alignParentBottom="true"
+
+            android:background="@color/image_bg"
+            android:layout_centerHorizontal="true"/>
+
+
+    </RelativeLayout>
+</layout>

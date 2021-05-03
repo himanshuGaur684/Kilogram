@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+
+        <import type="gaur.himanshu.august.kilogram.local.ui.mainapp.home.paging.HomeBlog"/>
+
+        <import type="android.view.View" />
+
+
+        <variable
+            name="blog"
+            type="HomeBlog" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/ll1"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
+
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/blog_profile_image"
+                glide="@{blog.profileimage}"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:scaleType="centerCrop"
+                android:src="@color/black"
+                app:riv_border_color="@color/teal_200"
+                app:riv_border_width="1dp"
+                app:riv_corner_radius="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:fontFamily="@font/intro_screen_text"
+                android:maxLines="1"
+                android:text="@{blog.username}"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:text="Fabulous" />
+
+
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/post_viewholder_save_blog"
+                android:src="@drawable/ic_menu"
+                android:layout_marginEnd="10dp"
+                />
+
+        </LinearLayout>
+
+        <com.github.chrisbanes.photoview.PhotoView
+            android:id="@+id/blog_image"
+            image_glide="@{blog.image}"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_below="@+id/ll1"
+            android:layout_marginTop="8dp"
+            android:background="@color/image_bg"
+            android:scaleType="centerInside"
+            android:src="@drawable/fragment_first" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/blog_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll2"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="20dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/intro_screen_text"
+            android:maxLines="5"
+            android:text="@{blog.title}"
+            android:visibility="@{blog.title.length()==0?View.GONE:View.VISIBLE}"
+            tools:text="Hello there here i am" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/blog_discription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/blog_title"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="20dp"
+
+            android:ellipsize="end"
+            android:fontFamily="@font/intro_screen_text"
+            android:maxLines="5"
+            android:text="@{blog.discription}"
+            android:textSize="12sp"
+            android:visibility="@{blog.discription.length()==0?View.GONE:View.VISIBLE}"
+            tools:text="Hello there here i am" />
+
+
+        <LinearLayout
+            android:id="@+id/ll2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/blog_image"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/post_viewholder_like_count"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(blog.likes)}"
+                tools:text="40000" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/blog_like"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="10dp"
+                android:src="@{blog.like_by_me? @drawable/color_punch:@drawable/punch}"
+                tools:src="@drawable/punch" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/post_viewholder_comment_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@{String.valueOf(blog.comment)}"
+                tools:text="40000" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/blog_comment"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/comments" />
+
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+       <import type="gaur.himanshu.august.kilogram.remote.response.comments.Comment"/>
+        <variable
+            name="comment"
+            type="Comment" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_height="wrap_content">
+
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            app:riv_corner_radius="40dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/comment_viewholder_image_view"
+            android:layout_marginStart="10dp"
+            glide="@{comment.profileimage}"
+
+            android:src="@color/black"/>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Himanshu"
+            android:id="@+id/comment_viewholder_title_text_view"
+            android:layout_toEndOf="@+id/comment_viewholder_image_view"
+            android:layout_marginTop="25dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="@{comment.username}"
+            android:layout_marginStart="10dp"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/comment_viewholder_comment_disc"
+            tools:text="Himanshu"
+            android:text="@{comment.comments}"
+            android:layout_below="@+id/comment_viewholder_title_text_view"
+            android:layout_toEndOf="@+id/comment_viewholder_image_view"
+           android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            style="@style/TextAppearance.AppCompat.Small"
+           />
+
+
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="0.4dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/image_bg"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+</layout>

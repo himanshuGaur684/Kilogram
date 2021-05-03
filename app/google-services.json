@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "762804461221",
+    "project_id": "kilogram-fe20c",
+    "storage_bucket": "kilogram-fe20c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762804461221:android:a73c9ab0f1f09797c6f74c",
+        "android_client_info": {
+          "package_name": "gaur.himanshu.august.kilogram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762804461221-m95sgj34eqskhd92qcrav68n90c9p0uh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSgMZhWyW8FLBEOo1gm8a_06MwiJD-yLo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762804461221-m95sgj34eqskhd92qcrav68n90c9p0uh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="gaur.himanshu.august.kilogram.remote.response.follow.Follow" />
+
+        <variable
+            name="follow"
+            type="Follow" />
+
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:paddingTop="8dp">
+
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/comment_viewholder_image_view"
+            glide="@{follow.profileimage}"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:scaleType="centerCrop"
+            android:src="@color/black"
+            app:riv_corner_radius="40dp" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/comment_viewholder_title_text_view"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/comment_viewholder_image_view"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{follow.users}"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            tools:text="Himanshu" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/follow_unfollow_in_follow_view_holder"
+            android:textAllCaps="false"
+            app:strokeColor="@color/purple_700"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/purple_700"
+            android:text="Follow"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/image_bg"
+            android:layout_alignParentBottom="true"/>
+
+
+    </RelativeLayout>
+</layout>

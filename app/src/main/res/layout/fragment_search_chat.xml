@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".local.ui.mainapp.chat.search.ChatSearchFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/chat_user_search_toolbar"
+            android:layout_width="match_parent"
+            app:title="Searh Chat User"
+            app:navigationIcon="@drawable/ic_back_black"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/chat_user_search_search"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                app:searchHintIcon="@color/white" />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chat_search_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/view_holder_chat_search"
+            android:layout_below="@+id/chat_user_search_toolbar"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+    </RelativeLayout>
+</layout>

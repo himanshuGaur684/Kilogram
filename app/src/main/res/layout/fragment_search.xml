@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".local.ui.mainapp.serach.SearchFragment">
+
+        <com.google.android.material.card.MaterialCardView
+
+            android:id="@+id/card_background_for_search"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_margin="4dp"
+            app:cardBackgroundColor="@color/purple_700">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.SearchView
+                    android:layout_marginEnd="30dp"
+                    android:id="@+id/search_users"
+                    android:saveEnabled="true"
+                    app:queryHint="Search here...."
+                    android:autofillHints="true"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@color/image_bg" />
+
+                <ProgressBar
+                    android:id="@+id/search_progress"
+                    android:layout_width="20dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="10dp"
+                    />
+
+
+            </LinearLayout>
+<!--            -->
+<!--            <EditText-->
+<!--              -->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--              -->
+<!--                android:background="#00000000"-->
+<!--                android:hint="Search.."-->
+<!--                android:maxLines="1"-->
+<!--                android:paddingStart="16dp"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textColorHint="@color/white" />-->
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/card_background_for_search"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/view_holder_search" />
+
+
+    </RelativeLayout>
+</layout>

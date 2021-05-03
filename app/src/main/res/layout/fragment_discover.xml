@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".local.ui.mainapp.discover.DiscoverFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/discover_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_700"
+            app:title="Discover"
+            app:titleTextColor="@color/white" >
+
+            <ProgressBar
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="end"
+                android:id="@+id/discover_fragment_progress_bar"
+                android:visibility="gone"
+                android:layout_marginEnd="10dp"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/discover_toolbar"
+            android:id="@+id/discover_swipe_refresh_layout"
+            > <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/discover_recycler"
+            android:layout_height="match_parent"
+
+            tools:listitem="@layout/view_holder_discover"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+    </RelativeLayout>
+</layout>
